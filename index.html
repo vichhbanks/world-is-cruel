@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iridium Landing</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- Hero Section (Halaman Awal) --- */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons a {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Homepage Content (Scroll Target) --- */
+    #homepage {
+      padding: 40px;
+      background: #fff;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1100px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .main-content {
+      flex: 2;
+    }
+
+    .main-content h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .main-content h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .main-content img {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+
+    .main-content p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+    }
+
+    .sidebar h3 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .sidebar .info {
+      font-size: 14px;
+    }
+
+    .sidebar .info small {
+      display: block;
+      color: #999;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+#interaction-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.interaction-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.interaction-item {
+  flex: 1;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.interaction-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.interaction-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.interaction-item ul li {
+  margin-bottom: 8px;
+}
+
+.interaction-item ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+}
+
+.interaction-item ul li a:hover {
+  color: #007BFF;
+}
+
+#footer {
+  background-color: #111;
+  color: #aaa;
+  padding: 60px 20px 30px;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h3 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  border-bottom: 1px solid #333;
+  padding: 8px 0;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-bottom a {
+  color: #777;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero / Landing Section -->
+  <div class="hero">
+    <h1>HINDIA</h1>
+    <p>DESIGN BY ABDUL AZIZ AL FIQRI</p>
+    <div class="nav-buttons">
+      <a href="#homepage">HOMEPAGE</a>
+      <a href="#services">ALBUM</a> 
+      <a href="#">RIGHT SIDEBAR</a>
+      <a href="#">NO SIDEBAR</a>
+    </div>
+  </div>
+
+  <!-- Homepage Section -->
+  <section id="homepage">
+    <div class="container">
+      <div class="main-content">
+        <h1>WELCOME TO IRIDIUM!</h1>
+        <h2>Integer sit amet pede vel arcu aliquet pretium</h2>
+        <img src="https://i.pinimg.com/736x/d7/da/eb/d7daeb2732852b4355937621877ece2e.jpg" alt="Beach">
+        <p>
+          Hindia adalah proyek musik solo dari Baskara Putra, seorang musisi dan penulis lagu asal Indonesia yang dikenal karena lirik-liriknya yang jujur, emosional, dan penuh refleksi. Ia pertama kali dikenal sebagai vokalis dari band .Feast sebelum memulai perjalanan solonya melalui Hindia. Debut albumnya yang berjudul Menari Dengan Bayangan (2019) berhasil menarik perhatian publik dengan lagu-lagu seperti "Secukupnya", "Evaluasi", dan "Membasuh" yang banyak mengangkat tema seputar kesehatan mental, kehidupan sehari-hari, serta pencarian jati diri. Musik Hindia memadukan elemen pop, indie, elektronik, dan alternatif dengan gaya produksi yang personal dan ekspresif. Lewat lirik-liriknya yang terasa seperti percakapan batin, Hindia menjadi suara bagi banyak anak muda yang sedang mencari makna di tengah tekanan hidup modern. Selain bermusik, Baskara juga aktif dalam berbagai kegiatan kreatif dan kerap menyuarakan isu-isu sosial yang relevan dengan generasinya.
+        </p>
+      </div>
+
+      <div class="sidebar">
+        <h3>HINDIA UPDATE</h3>
+
+        <div class="item">
+          <img src="https://akcdn.detik.net.id/community/media/visual/2024/02/16/hindia_43.jpeg?w=300&q=80" alt="thumb1">
+          <div class="info">
+            <small>Senin, 10 Mar 2025 20:00 WIB</small>
+            <div>Baskara Putra, Hindia dan .Feast</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://akcdn.detik.net.id/community/media/visual/2023/07/23/raisa-dan-hindia-panaskan-panggung-wtf-2023-hari-terakhir_43.jpeg?w=300&q=80" alt="thumb2">
+          <div class="info">
+            <small>Sabtu, 21 Des 2024 12:04 WIB</small>
+            <div>Ngonser Bareng Hindia Sampai Tulus Pekan Ini!</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://akcdn.detik.net.id/community/media/visual/2025/02/24/hindia-1740384844352_43.jpeg?w=300&q=80" alt="thumb3">
+          <div class="info">
+            <small>Senin, 24 Feb 2025 21:00 WIB</small>
+            <div>Mixtape Doves, '25 on Black Canvas dari Hindia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+<section id="services" style="background: #f9f9f9; padding: 60px 20px;">
+  <div style="max-width: 2000px; margin: auto; display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+    
+    <div style="flex: 1; min-width: 280px; max-width: 320px; text-align: center;">
+      <h3>AENEAN ELEMENTUM FACILISIS</h3>
+      <img src="https://images.unsplash.com/photo-1609160885327-602d3b6f6f88" alt="Feature 1" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 15px;">
+      <p style="font-size: 14px; color: #555;">
+        Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f04e23; color: white; border-radius: 20px; text-decoration: none;">MORE DETAILS</a>
+    </div>
+
+    <div style="flex: 1; min-width: 280px; max-width: 320px; text-align: center;">
+      <h3>FUSCE ULTRICES FRINGILLA</h3>
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Feature 2" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 15px;">
+      <p style="font-size: 14px; color: #555;">
+        Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f04e23; color: white; border-radius: 20px; text-decoration: none;">MORE DETAILS</a>
+    </div>
+
+    <div style="flex: 1; min-width: 280px; max-width: 320px; text-align: center;">
+      <h3>ETIAM RHONCUS VOLUTPAT ERAT</h3>
+      <img src="https://images.unsplash.com/photo-1590073242676-1371f48912ec" alt="Feature 3" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 15px;">
+      <p style="font-size: 14px; color: #555;">
+        Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f04e23; color: white; border-radius: 20px; text-decoration: none;">MORE DETAILS</a>
+    </div>
+
+<!-- Footer Section -->
+<section id="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>LATEST POSTS</h3>
+      <ul>
+        <li><a href="#">Pellentesque lectus gravida blandit</a></li>
+        <li><a href="#">Lorem ipsum consectetur adipiscing</a></li>
+        <li><a href="#">Phasellus nibh pellentesque congue</a></li>
+        <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+        <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>ULTRICES FRINGILLA</h3>
+      <ul>
+        <li><a href="#">Pellentesque lectus gravida blandit</a></li>
+        <li><a href="#">Lorem ipsum consectetur adipiscing</a></li>
+        <li><a href="#">Phasellus nibh pellentesque congue</a></li>
+        <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+        <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>AENEAN ELEMENTUM</h3>
+      <ul>
+        <li><a href="#">Pellentesque lectus gravida blandit</a></li>
+        <li><a href="#">Lorem ipsum consectetur adipiscing</a></li>
+        <li><a href="#">Phasellus nibh pellentesque congue</a></li>
+        <li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+        <li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    Site made with: <a href="#">Templated.co</a> Distributed by <a href="#">ThemeWagon</a>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
